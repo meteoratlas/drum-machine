@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
 const DrumTrack = props => {
-    let [pattern, setPattern] = useState(
-        Array.apply(null, Array(16)).map(x => ({ velocity: 0, pitch: 0 }))
-    );
-    const loadPattern = pattern => {
-        setPattern(pattern);
+    const formatTitle = str => {
+        return str
+            .split("-")
+            .map(x => x.charAt(0).toUpperCase() + x.slice(1))
+            .join(" ");
     };
     return (
         <div className={"track " + props.title}>
-            {pattern.map(i => {
+            <p>{formatTitle(props.title)}</p>
+            {props.pattern.map(i => {
                 return <div className="track-button"></div>;
             })}
         </div>

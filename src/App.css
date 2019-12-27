@@ -1,17 +1,6 @@
-.App {
+/* .App {
     text-align: center;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
+} */
 
 .App-header {
     background-color: #282c34;
@@ -29,14 +18,19 @@
 }
 
 .track {
-    display: inline-block;
+    padding: 1rem;
+}
+
+.track p {
+    display: inline;
 }
 
 .track-button {
+    display: inline-grid;
+    grid-auto-flow: row;
     width: 30px;
     height: 30px;
     background-color: rgb(178, 228, 102);
     margin: 8px 8px 8px 0;
     transition: 0.4s;
-    float: left;
 }
