@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DrumSwitch from "./DrumSwitch";
 
 const DrumTrack = props => {
     const formatTitle = str => {
@@ -10,8 +11,14 @@ const DrumTrack = props => {
     return (
         <div className={"track " + props.title}>
             <p>{formatTitle(props.title)}</p>
-            {props.pattern.map(i => {
-                return <div className="track-button"></div>;
+            {props.pattern.map((x, i) => {
+                return (
+                    <DrumSwitch
+                        index={i}
+                        shift={props.shift}
+                        cntrl={props.cntrl}
+                    />
+                );
             })}
         </div>
     );
