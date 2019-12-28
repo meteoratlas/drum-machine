@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tone from "tone";
 import DrumTrack from "../components/DrumTrack";
+import StartStopButton from "../components/StartStopButton";
 
 const DrumMachine = () => {
     const [tempo, setTempo] = useState(120);
@@ -45,6 +46,9 @@ const DrumMachine = () => {
         if (e.key === "Shift") setShiftDown(false);
         if (e.key === "Control") setCntrlDown(false);
     };
+    const startStop = () => {
+        Tone.Transport.toggle();
+    };
 
     useEffect(() => {
         // on mount
@@ -53,6 +57,8 @@ const DrumMachine = () => {
 
         state.synth.triggerAttackRelease("C4", "8n");
     }, [state.synth]);
+
+    const onSwitchClicked = (func, index) => {};
 
     return (
         <div
@@ -103,6 +109,7 @@ const DrumMachine = () => {
                 cntrl={cntrlDown}
                 shift={shiftDown}
             />
+            <StartStopButton play={false} startStop={startStop} />
         </div>
     );
 };

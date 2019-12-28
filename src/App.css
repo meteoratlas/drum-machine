@@ -22,7 +22,10 @@
 }
 
 .track p {
-    display: inline;
+    display: inline-block;
+    width: 100px;
+    margin-top: 0;
+    background-color: #61dafb;
 }
 
 .track-button {
@@ -33,4 +36,9 @@
     background-color: rgb(178, 228, 102);
     margin: 8px 8px 8px 0;
     transition: 0.4s;
+}
+
+.start-button {
+    width: 100px;
+    padding: 2%;
 }

@@ -14,9 +14,11 @@ const DrumTrack = props => {
             {props.pattern.map((x, i) => {
                 return (
                     <DrumSwitch
+                        key={props.title + i}
                         index={i}
                         shift={props.shift}
                         cntrl={props.cntrl}
+                        clicked={props.clicked}
                     />
                 );
             })}
